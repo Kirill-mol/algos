@@ -1,21 +1,42 @@
-[56\. Merge Intervals](https://leetcode.com/problems/merge-intervals/description/)
+[228\. Summary Ranges](https://leetcode.com/problems/summary-ranges/description/problems/summary-ranges/)
 
-Given an array of `intervals` where `intervals[i] = [starti, endi]`, merge all overlapping intervals, and return _an array of the non-overlapping intervals that cover all the intervals in the input_.
+You are given a **sorted unique** integer array `nums`.
+
+A **range** `[a,b]` is the set of all integers from `a` to `b` (inclusive).
+
+Return _the **smallest sorted** list of ranges that **cover all the numbers in the array exactly**_. That is, each element of `nums` is covered by exactly one of the ranges, and there is no integer `x` such that `x` is in one of the ranges but not in `nums`.
+
+Each range `[a,b]` in the list should be output as:
+
+*   `"a->b"` if `a != b`
+*   `"a"` if `a == b`
 
 **Example 1:**
 
-**Input:** intervals = \[\[1,3\],\[2,6\],\[8,10\],\[15,18\]\]<br>
-**Output:** \[\[1,6\],\[8,10\],\[15,18\]\]<br>
-**Explanation:** Since intervals \[1,3\] and \[2,6\] overlap, merge them into \[1,6\].
+**Input:** nums = \[0,1,2,4,5,7\]
+
+**Output:** \["0->2","4->5","7"\]
+
+**Explanation:** The ranges are:<br>
+\[0,2\] --> "0->2"<br>
+\[4,5\] --> "4->5"<br>
+\[7,7\] --> "7"<br>
 
 **Example 2:**
 
-**Input:** intervals = \[\[1,4\],\[4,5\]\]<br>
-**Output:** \[\[1,5\]\]<br>
-**Explanation:** Intervals \[1,4\] and \[4,5\] are considered overlapping.
+**Input:** nums = \[0,2,3,4,6,8,9\]
+
+**Output:** \["0","2->4","6","8->9"\]
+
+**Explanation:** The ranges are: <br>
+\[0,0\] --> "0" <br>
+\[2,4\] --> "2->4"  <br>
+\[6,6\] --> "6"  <br>
+\[8,9\] --> "8->9"  <br>
 
 **Constraints:**
 
-*   `1 <= intervals.length <= 104`
-*   `intervals[i].length == 2`
-*   `0 <= starti <= endi <= 104`
+*   `0 <= nums.length <= 20`
+*   `-231 <= nums[i] <= 231 - 1`
+*   All the values of `nums` are **unique**.
+*   `nums` is sorted in ascending order.

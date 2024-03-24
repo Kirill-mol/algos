@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 class Solution {
     public List<String> summaryRanges(int[] nums) {
         if (nums.length == 0) {
             return Collections.emptyList();
         }
 
-        List<String> ranges = new ArrayList(nums.length);
+        List<String> ranges = new ArrayList<>(nums.length);
         int curRangeStart = nums[0];
         int curRangeEnd = nums[0];
 
